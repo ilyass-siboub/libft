@@ -6,7 +6,7 @@
 /*   By: isiboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 05:16:16 by isiboub           #+#    #+#             */
-/*   Updated: 2025/10/17 05:19:39 by isiboub          ###   ########.fr       */
+/*   Updated: 2025/10/24 09:46:53 by isiboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	last = ft_lstlast(*lst);
+	new->next = NULL;
 	last->next = new;
 }

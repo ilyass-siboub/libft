@@ -6,7 +6,7 @@
 #    By: isiboub <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 13:30:47 by isiboub           #+#    #+#              #
-#    Updated: 2025/10/20 21:18:42 by isiboub          ###   ########.fr        #
+#    Updated: 2025/10/24 16:26:55 by isiboub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,16 +32,16 @@ BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 OBJ = $(SRC:.c=.o)
 OBJ_BONUS = $(BONUS_SRC:.c=.o)
 
-%.o: %.c
+all: $(NAME)
+
+%.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-all: $(NAME)
-
-bonus: $(OBJ) $(OBJ_BONUS)
-	$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
+bonus: $(OBJ_BONUS)
+	$(AR) $(NAME) $(OBJ_BONUS)
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
