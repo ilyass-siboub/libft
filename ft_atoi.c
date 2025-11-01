@@ -6,7 +6,7 @@
 /*   By: isiboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:26:23 by isiboub           #+#    #+#             */
-/*   Updated: 2025/10/25 10:04:30 by isiboub          ###   ########.fr       */
+/*   Updated: 2025/10/25 11:02:58 by isiboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_atoi(const char *str)
 		overflow = overflow_check(result, sign, str[i]);
 		if (overflow != 1)
 			return (overflow);
-		result = result * 1 + (str[i] - '0');
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	return ((int)(result * sign));

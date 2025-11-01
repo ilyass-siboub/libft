@@ -6,7 +6,7 @@
 #    By: isiboub <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 13:30:47 by isiboub           #+#    #+#              #
-#    Updated: 2025/10/24 16:26:55 by isiboub          ###   ########.fr        #
+#    Updated: 2025/10/28 10:41:07 by isiboub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
       ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
       ft_putendl_fd.c ft_putnbr_fd.c
 
-BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-            ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-            ft_lstmap.c
-
 OBJ = $(SRC:.c=.o)
-OBJ_BONUS = $(BONUS_SRC:.c=.o)
 
 all: $(NAME)
 
@@ -40,15 +35,12 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-bonus: $(OBJ_BONUS)
-	$(AR) $(NAME) $(OBJ_BONUS)
-
 clean:
-	$(RM) $(OBJ) $(OBJ_BONUS)
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean
